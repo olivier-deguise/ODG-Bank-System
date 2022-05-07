@@ -18,4 +18,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bank
-          path: target/re-21-SHADED.jar
+          path: Bank/target/Bank-1.0-SNAPSHOT.jar
