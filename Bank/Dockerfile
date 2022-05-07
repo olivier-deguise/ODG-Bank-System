@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM openjdk:17-alpine
 ENV PORT=9900
 WORKDIR /app
