@@ -17,7 +17,7 @@ spring:
 
 #Tomcat configuration
 server:
-  port: 9900
+  port: ${PORT:9900}
   servlet:
     context-path: /bank-system
 
