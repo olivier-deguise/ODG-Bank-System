@@ -1,0 +1,11 @@
+
+spring:
+  datasource:
+    platform: postgresql
+    url: jdbc:postgresql://ec2-52-71-69-66.compute-1.amazonaws.com:5432/ddn0otd9vhpaof
+    username: lvsftbbwjjwmde
+    password: 653711af55eaddfa0862f617c976a4db5a3692b3329849a50e50f3569f762414
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update

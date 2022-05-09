@@ -1,0 +1,19 @@
+
+
+spring:
+  datasource:
+    platform: postgresql
+    username: 'odg18'
+    url: jdbc:postgresql://postgres:5433/bank
+    password: 'password'
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      #ddl-auto: update
+      ddl-auto: create-drop
+    show-sql: 'true'
+

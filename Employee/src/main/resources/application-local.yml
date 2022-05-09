@@ -1,0 +1,2 @@
+bank:
+  url: http://localhost:9900/bank-system/api/v1/

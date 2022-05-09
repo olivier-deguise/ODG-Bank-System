@@ -1,10 +1,12 @@
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  main:
+    banner-mode: off
+
 logging:
   level:
     root: OFF
-
-spring:
-  main:
-    banner-mode: off
 
 #bank:
 #  url: http://localhost:9900/bank-system/api/v1/
