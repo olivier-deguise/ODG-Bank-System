@@ -1,11 +1,11 @@
 
-
 spring:
   datasource:
     platform: postgresql
     username: 'odg18'
-    url: jdbc:postgresql://postgres:5433/bank
     password: 'password'
+    url: jdbc:postgresql://postgres-bank:5432/bank
+
   jpa:
     defer-datasource-initialization: true
     properties:

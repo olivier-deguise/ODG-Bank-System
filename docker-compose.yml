@@ -1,0 +1,58 @@
+services:
+  postgres-bank:
+    container_name: postgres-bank
+    image: postgres
+    hostname: postgres-bank
+    environment:
+      POSTGRES_DB: bank
+      POSTGRES_USER: odg18
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-bank:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-bank
+    restart: unless-stopped
+
+  pgadmin-bank:
+    container_name: pgadmin-bank
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin-bank:/var/lib/pgadmin
+    ports:
+      - "5051:80"
+    networks:
+      - postgres-bank
+    restart: unless-stopped
+    depends_on:
+      - postgres-bank
+
+  bank:
+    image: odg18/bank:latest
+    container_name: bank
+    ports:
+      - "9900:9900"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dockercompose
+    networks:
+      - spring-bank
+      - postgres-bank
+    depends_on:
+      - postgres-bank
+      - pgadmin-bank
+
+networks:
+  postgres-bank:
+    driver: bridge
+  spring-bank:
+    driver: bridge
+
+volumes:
+  postgres-bank:
+  pgadmin-bank:
