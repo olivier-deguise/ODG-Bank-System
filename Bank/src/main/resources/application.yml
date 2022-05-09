@@ -3,7 +3,7 @@ spring:
   application:
     name: Bank System API
   profiles:
-    active: @spring.profiles.active@
+    active: '@spring.profiles.active@'
 
   datasource:
     #url: jdbc:postgresql://52.71.69.66:5432/ddn0otd9vhpaof
