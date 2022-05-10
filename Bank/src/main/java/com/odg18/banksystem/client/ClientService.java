@@ -39,25 +39,33 @@ public class ClientService {
     }
 
     public void upgradeClient(String clientName){
-        Client client = clientRepository.findByName(clientName).get();
-        if(client.getStatus().equals(ClientStatus.BRONZE)){
-            client.setStatus(ClientStatus.SILVER);
+        Optional<Client> optClient = clientRepository.findByName(clientName);
+        if(optClient.isPresent()){
+            Client client = optClient.get();
+            if(client.getStatus().equals(ClientStatus.BRONZE)){
+                client.setStatus(ClientStatus.SILVER);
+            }
+            else if(client.getStatus().equals(ClientStatus.SILVER)){
+                client.setStatus(ClientStatus.GOLD);
+            }
+            clientRepository.save(client);
         }
-        else if(client.getStatus().equals(ClientStatus.SILVER)){
-            client.setStatus(ClientStatus.GOLD);
-        }
-        clientRepository.save(client);
+
     }
 
     public void downgradeClient(String clientName){
-        Client client = clientRepository.findByName(clientName).get();
-        if(client.getStatus().equals(ClientStatus.SILVER)){
-            client.setStatus(ClientStatus.BRONZE);
+        Optional<Client> optClient = clientRepository.findByName(clientName);
+        if(optClient.isPresent()){
+            Client client = optClient.get();
+            if(client.getStatus().equals(ClientStatus.SILVER)){
+                client.setStatus(ClientStatus.BRONZE);
+            }
+            else if(client.getStatus().equals(ClientStatus.GOLD)){
+                client.setStatus(ClientStatus.SILVER);
+            }
+            clientRepository.save(client);
         }
-        else if(client.getStatus().equals(ClientStatus.GOLD)){
-            client.setStatus(ClientStatus.SILVER);
-        }
-        clientRepository.save(client);
+
     }
 
 }
