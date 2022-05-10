@@ -1,6 +1,7 @@
 # Application ODG Bank System
 
 ![example workflow](https://github.com/olivier-deguise/ODG-Bank-System/actions/workflows/pipeline.yml/badge.svg)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odg18/bank)
 
 L'application ODG Bank System est une application de test pour démontrer l'utilisation de différentes technologies.
 Elle combine les technologies: Java, Springboot, Spring Data JPA, et les bases de données H2 et Postgresql.
