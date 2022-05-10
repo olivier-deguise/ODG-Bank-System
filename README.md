@@ -17,7 +17,7 @@ L'application est divisée en 3 modules: Bank, employee et client
 ## Procédure de lancement
 Il existe 3 façons de lancer le logiciel:
 
-- **En local sur une BD H2**: 
+- **En local sur une BD H2**:   
 
     À la racine de l'application, faire la commande
 `mvn clean install -Plocal` pour construire les jars appropriés. 
