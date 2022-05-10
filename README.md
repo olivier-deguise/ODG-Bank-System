@@ -1,5 +1,7 @@
 # Application ODG Bank System
 
+![example workflow](https://github.com/olivier-deguise/ODG-Bank-System/actions/workflows/pipeline.yml/badge.svg)
+
 L'application ODG Bank System est une application de test pour démontrer l'utilisation de différentes technologies.
 Elle combine les technologies: Java, Springboot, Spring Data JPA, et les bases de données H2 et Postgresql.
 De plus, l'application utilise les "GitHub actions" pour lancer un pipeline CI/CD. Plus précisément, les 
