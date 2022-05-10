@@ -37,7 +37,6 @@ public class WaitingClient implements Runnable{
                 String status = association.getString("status");
                 System.out.println("Client " + clientName + " waiting for product " + productName + " with status " + status + ".");
             }
-            //System.out.println("response body=" + response.getBody());
         }
         else{
             System.out.println("Error occurred:" + response.toString());

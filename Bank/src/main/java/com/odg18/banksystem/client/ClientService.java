@@ -35,8 +35,7 @@ public class ClientService {
     }
 
     public Client saveClient(Client client) {
-        Client savedClient = clientRepository.save(client);
-        return savedClient;
+        return clientRepository.save(client);
     }
 
     public void upgradeClient(String clientName){

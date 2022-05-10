@@ -15,7 +15,7 @@ import static org.mockito.BDDMockito.given;
 
 @Tag("UnitTests")
 @ExtendWith(MockitoExtension.class)
-public class ClientServiceTest {
+class ClientServiceTest {
 
     @Mock private ClientRepository clientRepository;
 
@@ -27,7 +27,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void getClientTest(){
+    void getClientTest(){
         //given
 
 
@@ -39,7 +39,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void getClientByNameTest(){
+    void getClientByNameTest(){
         //given
 
         //when
@@ -50,7 +50,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void getClientsTest(){
+    void getClientsTest(){
         //given
 
         //when
@@ -61,7 +61,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void deleteClientTest(){
+    void deleteClientTest(){
         //given
 
         //when
@@ -72,7 +72,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void saveClientTest(){
+    void saveClientTest(){
         //given
         Client c = Client.builder()
                             .name("name")
@@ -86,7 +86,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void upgradeClientWithStatusBronze(){
+    void upgradeClientWithStatusBronze(){
         //given
         String clientName = "name";
         Client c = Client.builder()
@@ -103,7 +103,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void upgradeClientWithStatusSilver(){
+    void upgradeClientWithStatusSilver(){
         //given
         String clientName = "name";
         Client c = Client.builder()
@@ -120,7 +120,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void downgradeClientWithStatusGold(){
+    void downgradeClientWithStatusGold(){
         //given
         String clientName = "name";
         Client c = Client.builder()
@@ -137,7 +137,7 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void downgradeClientWithStatusSilver(){
+    void downgradeClientWithStatusSilver(){
         //given
         String clientName = "name";
         Client c = Client.builder()

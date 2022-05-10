@@ -1,7 +1,6 @@
 package com.odg18.banksystem.cli.employee.command.subcommand;
 
 import lombok.SneakyThrows;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;

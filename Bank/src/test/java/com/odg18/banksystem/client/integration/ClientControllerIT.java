@@ -40,7 +40,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestPropertySource(locations = "classpath:application-it.properties")
 @AutoConfigureMockMvc
 @Tag("IntegrationTests")
-public class ClientControllerIT {
+class ClientControllerIT {
 
     @Autowired
     private MockMvc mockMvc;
@@ -62,7 +62,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void saveClient(){
+    void saveClient(){
         //given
         Client c = Client.builder()
                 .name("name")
@@ -88,7 +88,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void getClientNonExisting(){
+    void getClientNonExisting(){
        //given
         clientRepository.deleteAllInBatch();
         String nonExistingId = "888";
@@ -108,7 +108,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void getClientExisting(){
+    void getClientExisting(){
         //given
         clientRepository.deleteAllInBatch();
         Client c = Client.builder()
@@ -135,7 +135,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void getClientByNameNonExisting(){
+    void getClientByNameNonExisting(){
         //given
         clientRepository.deleteAllInBatch();
         String nonExistingName = "xyz";
@@ -155,7 +155,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void getClientByNameExisting(){
+    void getClientByNameExisting(){
         //given
         clientRepository.deleteAllInBatch();
         Client c = Client.builder()
@@ -182,7 +182,7 @@ public class ClientControllerIT {
 
     @Test
     @SneakyThrows
-    public void getWaitingClient(){
+    void getWaitingClient(){
         //given
         Client c1 = Client.builder()
                 .name("name1")
@@ -238,8 +238,7 @@ public class ClientControllerIT {
 
         //then
         List<ClientProductAssociation> list = objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<>(){});
-        assertThat(list).contains(ass1);
-        assertThat(list).contains(ass2);
+        assertThat(list).contains(ass1, ass2);
 
         clientProductAssociationRepository.deleteAllInBatch();
         clientRepository.deleteAllInBatch();

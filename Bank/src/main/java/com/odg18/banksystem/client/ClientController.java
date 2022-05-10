@@ -56,25 +56,25 @@ public class ClientController {
     }
 
     @PostMapping("/accept-product")
-    public ResponseEntity acceptProductForClient(@RequestParam("clientName") String clientName, @RequestParam("productId") Long productId){
+    public ResponseEntity<Object> acceptProductForClient(@RequestParam("clientName") String clientName, @RequestParam("productId") Long productId){
         clientProductAssociationService.acceptProduct(clientName, productId);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/reject-product")
-    public ResponseEntity rejectProductForClient(@RequestParam("clientName") String clientName, @RequestParam("productId") Long productId){
+    public ResponseEntity<Object> rejectProductForClient(@RequestParam("clientName") String clientName, @RequestParam("productId") Long productId){
         clientProductAssociationService.rejectProduct(clientName, productId);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/upgrade")
-    public ResponseEntity upgradeClient(@RequestParam("clientName") String clientName){
+    public ResponseEntity<Object> upgradeClient(@RequestParam("clientName") String clientName){
         clientService.upgradeClient(clientName);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/downgrade")
-    public ResponseEntity downgradeClient(@RequestParam("clientName") String clientName){
+    public ResponseEntity<Object> downgradeClient(@RequestParam("clientName") String clientName){
         clientService.downgradeClient(clientName);
         return ResponseEntity.ok().build();
     }
