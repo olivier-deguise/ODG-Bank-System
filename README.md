@@ -3,7 +3,7 @@
 ![example workflow](https://github.com/olivier-deguise/ODG-Bank-System/actions/workflows/pipeline.yml/badge.svg)
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odg18/bank)
 [![codecov](https://codecov.io/gh/olivier-deguise/ODG-Bank-System/branch/master/graph/badge.svg?token=MPDJS15838)](https://codecov.io/gh/olivier-deguise/ODG-Bank-System)
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=olivier-deguise_ODG-Bank-System)](https://sonarcloud.io/summary/new_code?id=olivier-deguise_ODG-Bank-System)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=olivier-deguise_ODG-Bank-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=olivier-deguise_ODG-Bank-System)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
