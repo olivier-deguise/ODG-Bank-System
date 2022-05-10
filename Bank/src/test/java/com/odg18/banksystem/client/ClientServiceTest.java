@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.never;
 
 @Tag("UnitTests")
 @ExtendWith(MockitoExtension.class)
@@ -120,6 +121,31 @@ class ClientServiceTest {
     }
 
     @Test
+    void upgradeClientNotExist(){
+        //given
+        String clientName = "no-name";
+        Client c = Client.builder()
+                .name(clientName)
+                .status(ClientStatus.BRONZE)
+                .build();
+        c.setId(Long.valueOf(456));
+        c.setUsername(clientName);
+        c.setPassword("pass");
+        c.getId();
+        c.getUsername();
+        c.getPassword();
+        c.getName();
+
+        given(clientRepository.findByName(clientName)).willReturn(Optional.empty());
+
+        //when
+        underTest.upgradeClient(clientName);
+
+        //then
+        verify(clientRepository, never()).save(c);
+    }
+
+    @Test
     void downgradeClientWithStatusGold(){
         //given
         String clientName = "name";
@@ -151,6 +177,23 @@ class ClientServiceTest {
 
         //then
         verify(clientRepository).save(c);
+    }
+
+    @Test
+    void downgradeClientNotExist(){
+        //given
+        String clientName = "no-name";
+        Client c = new Client();
+        c.setStatus(ClientStatus.BRONZE);
+        c.setName(clientName);
+
+        given(clientRepository.findByName(clientName)).willReturn(Optional.empty());
+
+        //when
+        underTest.downgradeClient(clientName);
+
+        //then
+        verify(clientRepository, never()).save(c);
     }
 
 }

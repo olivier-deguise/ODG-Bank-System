@@ -50,7 +50,6 @@ public class ClientService {
             }
             clientRepository.save(client);
         }
-
     }
 
     public void downgradeClient(String clientName){
@@ -65,7 +64,6 @@ public class ClientService {
             }
             clientRepository.save(client);
         }
-
     }
 
 }

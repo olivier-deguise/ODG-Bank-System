@@ -20,6 +20,8 @@
         <spring.boot.dependencies.version>2.6.2</spring.boot.dependencies.version>
         <spring.cloud-version>2021.0.0</spring.cloud-version>
         <image>odg18/${project.artifactId}:${project.version}</image>
+        <failsafe.jacoco.args/>
+        <surefire.jacoco.args/>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-merged-test-coverage-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
@@ -232,7 +234,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <argLine>@{surefire.jacoco.args}</argLine>
+                    <argLine>${surefire.jacoco.args}</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -248,7 +250,7 @@
                 </executions>
                 <configuration>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-                    <argLine>@{failsafe.jacoco.args}</argLine>
+                    <argLine>${failsafe.jacoco.args}</argLine>
                 </configuration>
             </plugin>
         </plugins>
