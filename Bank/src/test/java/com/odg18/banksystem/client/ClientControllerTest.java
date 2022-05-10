@@ -26,7 +26,6 @@ class ClientControllerTest {
     @Mock
     private ClientProductAssociationService clientProductAssociationService;
 
-
     @BeforeEach
     void setUp() {
         underTest = new ClientController(clientService, clientProductAssociationService);
