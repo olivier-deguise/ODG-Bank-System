@@ -70,16 +70,6 @@ jobs:
           target-url: ${{ secrets.TARGET_URL }}
           target-username: ${{ secrets.TARGET_USERNAME }}
           target-token: ${{ secrets.TARGET_TOKEN }}
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 0
-#      - uses: pixta-dev/repository-mirroring-action@v1
-#        with:
-#          target_repo_url:
-#            git@gitlab.com:olivier-deguise/odg-bank-system-mirror.git
-#          ssh_private_key:
-#            ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
 
   publish-image:
     needs: [unit-testing, integration-testing]
