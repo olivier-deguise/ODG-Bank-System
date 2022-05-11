@@ -4,6 +4,9 @@ spring:
     name: Bank System API
   profiles:
     active: '@spring.profiles.active@'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
   datasource:
     #url: jdbc:postgresql://52.71.69.66:5432/ddn0otd9vhpaof

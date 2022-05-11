@@ -52,3 +52,8 @@ Ensuite, toujours à la racine, les exécutables employee et
 client pourront être utilisés. Par exemple, la commande `employe --add testuser` pourra être utilisé
 pour ajouter un client dans la base de données Postgresql sur Heroku.
 
+## Documentation de l'API
+L'API du module Bank a été généré à l'aide de SpringDoc-OpenAPI.
+Une fois le module bank lancé, la documentation sera accessible via 
+cet URL en local: http://localhost:9900/bank-system/swagger-ui.html 
+sur sur Heroku via l'URL: http://odg18-bank.herokuapp.com/bank-system/swagger-ui.html 
