@@ -28,6 +28,10 @@
     <profiles>
         <profile>
             <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
             <properties>
                 <spring.profiles.active>local</spring.profiles.active>
             </properties>
@@ -159,7 +163,7 @@
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/jacoco-output/jacoco-unit-tests.exec</destFile>
-<!--                            <propertyName>surefire.jacoco.args</propertyName>-->
+                            <propertyName>surefire.jacoco.args</propertyName>
                         </configuration>
                     </execution>
                     <execution>
@@ -181,7 +185,7 @@
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/jacoco-output/jacoco-integration-tests.exec</destFile>
-<!--                            <propertyName>failsafe.jacoco.args</propertyName>-->
+                            <propertyName>failsafe.jacoco.args</propertyName>
                         </configuration>
                     </execution>
                     <execution>
@@ -225,10 +229,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <propertyName>failsafe.jacoco.args</propertyName>
-                    <propertyName>surefire.jacoco.args</propertyName>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

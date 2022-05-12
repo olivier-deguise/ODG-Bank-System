@@ -1,4 +1,4 @@
-package com.odg18.banksystem.client.integration;
+package com.odg18.banksystem.integration;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,6 @@ import com.odg18.banksystem.common.ClientProductStatus;
 import com.odg18.banksystem.common.ClientStatus;
 import com.odg18.banksystem.product.Product;
 import com.odg18.banksystem.product.ProductRepository;
-import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
