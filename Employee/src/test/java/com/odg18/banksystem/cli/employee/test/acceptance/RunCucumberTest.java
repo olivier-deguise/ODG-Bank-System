@@ -1,0 +1,9 @@
+package com.odg18.banksystem.cli.employee.test.acceptance;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty"})
+public class RunCucumberTest  {}
